@@ -21,7 +21,8 @@
         }
     },
     "require": {
-        "litstack/litstack": "^3.0"
+        "litstack/litstack": "^3.0",
+        "litstack/bladesmith": "1.x-dev"
     },
     "require-dev": {
         "litstack/rehearsal": "^1.0.1",

@@ -46,6 +46,7 @@ php artisan vendor:publish --provider="Litstack\Bricks\BricksServiceProvider"
 
 ## List of Bricks
 
-| Name                  | Fields  |  Usage                 |
-| --------------------- | ------- | ---------------------- |
-| TextRepeatable::class | WYSIWYG | Simple Text-Repeatable |
+| Name                   | Fields  |  Usage                                                    |
+| ---------------------- | ------- | --------------------------------------------------------- |
+| TextRepeatable::class  | WYSIWYG | Simple Text-Repeatable                                    |
+| ImageRepeatable::class | image   | Single Image-Repeatable using `<x-lit-image />` Component |
