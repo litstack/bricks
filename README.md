@@ -43,3 +43,9 @@ You can publish the templates to `resources/views/vendor/bricks/` and edit them 
 ```shell
 php artisan vendor:publish --provider="Litstack\Bricks\BricksServiceProvider"
 ```
+
+## List of Bricks
+
+| Name                  | Fields  |  Usage                 |
+| --------------------- | ------- | ---------------------- |
+| TextRepeatable::class | WYSIWYG | Simple Text-Repeatable |
