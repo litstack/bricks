@@ -2,10 +2,22 @@
 
 namespace Litstack\Bricks;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Litstack\Bricks\Console\InstallCommand;
 
 class BricksServiceProvider extends ServiceProvider
 {
+    /**
+     * Blade x components.
+     *
+     * @var array
+     */
+    protected $components = [
+        'lit-carousel'        => Components\CarouselComponent::class,
+        'lit-carousel-arrows' => Components\CarouselArrowsComponent::class,
+    ];
+
     /**
      * Register application services.
      *
@@ -13,7 +25,11 @@ class BricksServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->commands([
+            InstallCommand::class,
+        ]);
+
+        $this->registerBladeComponents();
     }
 
     /**
@@ -28,5 +44,17 @@ class BricksServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/bricks'),
         ]);
+    }
+
+    /**
+     * Register blade components.
+     *
+     * @return void
+     */
+    protected function registerBladeComponents()
+    {
+        foreach ($this->components as $name => $class) {
+            Blade::component($name, $class);
+        }
     }
 }

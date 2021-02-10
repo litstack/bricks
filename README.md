@@ -4,7 +4,9 @@ Pre-built Repeatables and Templates for common Webcontents.
 
 ## Install
 
-//
+`composer require litstack/bricks`
+
+`php artisan lit-bricks:install`
 
 ## Usage
 
@@ -46,7 +48,27 @@ php artisan vendor:publish --provider="Litstack\Bricks\BricksServiceProvider"
 
 ## List of Bricks
 
-| Name                   | Fields  |  Usage                                                    |
-| ---------------------- | ------- | --------------------------------------------------------- |
-| TextRepeatable::class  | WYSIWYG | Simple Text-Repeatable                                    |
-| ImageRepeatable::class | image   | Single Image-Repeatable using `<x-lit-image />` Component |
+| Name                        | Fields                 |  Usage                                                                 |
+| --------------------------- | ---------------------- | ---------------------------------------------------------------------- |
+| TextRepeatable::class       | WYSIWYG                | Simple Text-Repeatable                                                 |
+| ImageRepeatable::class      | image                  | Single Image-Repeatable using `<x-lit-image />` Component              |
+| ImagesRepeatable::class     | image                  | Multiple Image-Repeatable using `<x-lit-image />` Component            |
+| ImageSlideRepeatable::class | image, input, textarea | Image-Repeatable using `<x-lit-image />` Component, Input and Textarea |
+
+## Frontend Components
+
+### Carousel
+
+`<x-lit-carousel :block="$block" id="headerSlider" />`
+
+| Attribute | Description                                                   | required |
+| --------- | ------------------------------------------------------------- | -------- |
+| block     | Block Collection with elements to be shown as carousel slides |  ✅      |
+| id        | unique identifier to sync with arrows                         |          |
+
+`<x-lit-carousel-arrows id="headerSlider" color="white" />`
+
+| Attribute | Description                           | required |
+| --------- | ------------------------------------- | -------- |
+| id        | unique identifier to sync with arrows |   ✅     |
+| color     | Color of the arrows                   |          |

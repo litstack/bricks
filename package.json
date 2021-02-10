@@ -1,0 +1,22 @@
+{
+    "name": "lit-bricks",
+    "version": "1.0.0",
+    "description": "Pre-built Repeatables and Templates for common Webcontents.",
+    "main": "./resources/js/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/litstack/bricks.git"
+    },
+    "author": "Jannes Behrens",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/litstack/bricks/issues"
+    },
+    "homepage": "https://github.com/litstack/bricks#readme",
+    "dependencies": {
+        "embla-carousel": "^4.1.3"
+    }
+}
