@@ -38,6 +38,6 @@ class CarouselArrowsComponent extends Component
      */
     public function render()
     {
-        return view('bricks::carousel-arrows');
+        return view('bricks::components.carousel-arrows');
     }
 }

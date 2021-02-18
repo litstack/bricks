@@ -26,7 +26,7 @@ class CarouselComponent extends Component
      *
      * @param array $slides
      */
-    public function __construct(Collection $block, string $id = null)
+    public function __construct(Collection $block = null, string $id = null)
     {
         $this->block = $block;
         $this->id = $id;
@@ -39,6 +39,6 @@ class CarouselComponent extends Component
      */
     public function render()
     {
-        return view('bricks::carousel');
+        return view('bricks::components.carousel');
     }
 }

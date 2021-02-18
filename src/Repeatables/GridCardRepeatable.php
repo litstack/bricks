@@ -6,21 +6,21 @@ use Ignite\Crud\Fields\Block\Repeatable;
 use Ignite\Crud\Fields\Block\RepeatableForm;
 use Ignite\Page\Table\ColumnBuilder;
 
-class ImagesRepeatable extends Repeatable
+class GridCardRepeatable extends Repeatable
 {
     /**
      * Repeatable type.
      *
      * @var string
      */
-    protected $type = 'images';
+    protected $type = 'card';
 
     /**
      * The represantive view of the repeatable.
      *
      * @var string
      */
-    protected $view = 'bricks::content.images';
+    protected $view = 'bricks::repeatables.grid-card';
 
     /**
      * Build the repeatable preview.
@@ -30,7 +30,7 @@ class ImagesRepeatable extends Repeatable
      */
     public function preview(ColumnBuilder $preview): void
     {
-        $preview->col('Images');
+        $preview->col('Card');
     }
 
     /**
@@ -41,6 +41,7 @@ class ImagesRepeatable extends Repeatable
      */
     public function form(RepeatableForm $form): void
     {
-        $form->image('images')->title('Bilder');
+        $form->gridItemMacro();
+        $form->cardMacro();
     }
 }

@@ -15,7 +15,23 @@ class BricksServiceProvider extends ServiceProvider
      */
     protected $components = [
         'lit-carousel'        => Components\CarouselComponent::class,
+        'lit-image-carousel'  => Components\ImageCarouselComponent::class,
         'lit-carousel-arrows' => Components\CarouselArrowsComponent::class,
+        'lit-modal'           => Components\ModalComponent::class,
+        'lit-modal-trigger'   => Components\ModalTriggerComponent::class,
+        'lit-section'         => Components\SectionComponent::class,
+        'lit-grid-item'       => Components\GridItemComponent::class,
+        'lit-card'            => Components\CardComponent::class,
+    ];
+
+    /**
+     * Macros.
+     *
+     * @var array
+     */
+    protected $macros = [
+        Macros\GridItemMacro::class,
+        Macros\CardMacro::class,
     ];
 
     /**
@@ -30,6 +46,8 @@ class BricksServiceProvider extends ServiceProvider
         ]);
 
         $this->registerBladeComponents();
+
+        $this->registerMacros();
     }
 
     /**
@@ -43,7 +61,11 @@ class BricksServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/bricks'),
-        ]);
+        ], 'views');
+
+        $this->publishes([
+            __DIR__.'/../config/lit-bricks.php' => config_path('lit-bricks.php'),
+        ], 'config');
     }
 
     /**
@@ -55,6 +77,18 @@ class BricksServiceProvider extends ServiceProvider
     {
         foreach ($this->components as $name => $class) {
             Blade::component($name, $class);
+        }
+    }
+
+    /**
+     * Register macros.
+     *
+     * @return void
+     */
+    protected function registerMacros()
+    {
+        foreach ($this->macros as $macro) {
+            (new $macro)->register();
         }
     }
 }

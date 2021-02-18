@@ -20,7 +20,7 @@ class TextRepeatable extends Repeatable
      *
      * @var string
      */
-    protected $view = 'bricks::text';
+    protected $view = 'bricks::content.text';
 
     /**
      * Build the repeatable preview.
@@ -30,7 +30,7 @@ class TextRepeatable extends Repeatable
      */
     public function preview(ColumnBuilder $preview): void
     {
-        $preview->col('{text}');
+        $preview->col('<span class="text-secondary">'.fa('quote-right').' Text</span>');
     }
 
     /**

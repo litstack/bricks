@@ -4,6 +4,7 @@ namespace Litstack\Bricks\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Artisan;
 
 class InstallCommand extends Command
 {
@@ -49,6 +50,7 @@ class InstallCommand extends Command
         $this->info('/_____//_/ \__/  /_____//_/   /_/ \___//_/|_|/____/  ');
         $this->info("\n----- installing -----\n");
 
+        $this->publishConfig();
         $this->runNpmInstall(base_path());
 
         $this->info("\n----- finished -----\n");
@@ -72,5 +74,15 @@ class InstallCommand extends Command
         } else {
             shell_exec($cmd);
         }
+    }
+
+    /**
+     * Publish the bricks config.
+     *
+     * @return void
+     */
+    protected function publishConfig()
+    {
+        Artisan::call('vendor:publish --provider="Litstack\Bricks\BricksServiceProvider" --tag=config');
     }
 }
