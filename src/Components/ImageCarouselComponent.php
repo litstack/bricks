@@ -13,6 +13,7 @@ class ImageCarouselComponent extends Component
      * @param array $slides
      */
     public function __construct(
+        public string $gallery,
         public Collection | null $images = null,
         public string | null $id = null
     ) {
