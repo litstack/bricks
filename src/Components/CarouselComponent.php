@@ -2,34 +2,20 @@
 
 namespace Litstack\Bricks\Components;
 
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\Component;
 
 class CarouselComponent extends Component
 {
     /**
-     * Slides to be shown in the carousel.
-     *
-     * @var array
-     */
-    public $block;
-
-    /**
-     * Identifier.
-     *
-     * @var string
-     */
-    public $id;
-
-    /**
      * Create new CarouselComponent instance.
      *
-     * @param array $slides
+     * @param  string|null $id
+     * @return void
      */
-    public function __construct(Collection $block = null, string $id = null)
-    {
-        $this->block = $block;
-        $this->id = $id;
+    public function __construct(
+        public string | null $id = null,
+    ) {
+        //
     }
 
     /**
@@ -39,6 +25,6 @@ class CarouselComponent extends Component
      */
     public function render()
     {
-        return view('bricks::components.carousel');
+        return view('bricks::components.carousel.carousel');
     }
 }

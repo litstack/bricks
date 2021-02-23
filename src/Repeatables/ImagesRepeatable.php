@@ -20,7 +20,7 @@ class ImagesRepeatable extends Repeatable
      *
      * @var string
      */
-    protected $view = 'bricks::content.images';
+    protected $view = 'bricks::repeatables.images';
 
     /**
      * Build the repeatable preview.

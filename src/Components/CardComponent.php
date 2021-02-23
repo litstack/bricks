@@ -8,9 +8,17 @@ use Illuminate\View\Component;
 class CardComponent extends Component
 {
     /**
-     * Create new SectionDefaultComponent instance.
+     * Create new CardComponent instance.
      *
-     * @param array $slides
+     * @param  string|null $topline
+     * @param  string|null $headline
+     * @param  string|null $subline
+     * @param  string|null $route
+     * @param  string|null $link
+     * @param  string|null $linktext
+     * @param  bool|null   $blank
+     * @param  Media|null  $image
+     * @return void
      */
     public function __construct(
         public string | null $topline = null,
