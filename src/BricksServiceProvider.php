@@ -22,6 +22,8 @@ class BricksServiceProvider extends ServiceProvider
         'lit-section'         => Components\SectionComponent::class,
         'lit-grid-item'       => Components\GridItemComponent::class,
         'lit-card'            => Components\CardComponent::class,
+        'lit-accordeon'       => Components\AccordeonComponent::class,
+        'lit-accordeon-item'  => Components\AccordeonItemComponent::class,
     ];
 
     /**
