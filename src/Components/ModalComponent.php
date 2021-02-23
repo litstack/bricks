@@ -29,6 +29,6 @@ class ModalComponent extends Component
      */
     public function render()
     {
-        return view('bricks::components.modal');
+        return view('bricks::components.modal.modal');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Litstack\Bricks\Components;
 
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\View\Component;
 
 class SectionComponent extends Component
@@ -10,9 +11,16 @@ class SectionComponent extends Component
     public $py;
 
     /**
-     * Create new SectionDefaultComponent instance.
+     * Create new SectionComponent instance.
      *
-     * @param array $slides
+     * @param  string|null                $title
+     * @param  string                     $variant
+     * @param  bool                       $gap
+     * @param  bool                       $container
+     * @param  mixed|null                 $px
+     * @param  mixed|null                 $py
+     * @return void
+     * @throws BindingResolutionException
      */
     public function __construct(
         public string | null $title = null,

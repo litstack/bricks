@@ -20,7 +20,7 @@ class TextRepeatable extends Repeatable
      *
      * @var string
      */
-    protected $view = 'bricks::content.text';
+    protected $view = 'bricks::repeatables.text';
 
     /**
      * Build the repeatable preview.

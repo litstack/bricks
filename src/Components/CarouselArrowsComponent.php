@@ -7,28 +7,17 @@ use Illuminate\View\Component;
 class CarouselArrowsComponent extends Component
 {
     /**
-     * Identifier.
+     * Create new CarouselArrowsComponent instance.
      *
-     * @var string
+     * @param  string $id
+     * @param  string $color
+     * @return void
      */
-    public $id;
-
-    /**
-     * Color.
-     *
-     * @var string
-     */
-    public $color;
-
-    /**
-     * Create new CarouselComponent instance.
-     *
-     * @param array $slides
-     */
-    public function __construct(string $id, string $color = 'black')
-    {
-        $this->id = $id;
-        $this->color = $color;
+    public function __construct(
+        public string $id,
+        public string $color = 'black'
+    ) {
+        //
     }
 
     /**
@@ -38,6 +27,6 @@ class CarouselArrowsComponent extends Component
      */
     public function render()
     {
-        return view('bricks::components.carousel-arrows');
+        return view('bricks::components.carousel.carousel-arrows');
     }
 }

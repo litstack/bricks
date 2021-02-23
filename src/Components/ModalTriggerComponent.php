@@ -7,9 +7,10 @@ use Illuminate\View\Component;
 class ModalTriggerComponent extends Component
 {
     /**
-     * Create a new ModalComponent instance.
+     * Create a new ModalTriggerComponent instance.
      *
-     * @param array $slides
+     * @param  string $id
+     * @return void
      */
     public function __construct(
         public string $id,
@@ -24,6 +25,6 @@ class ModalTriggerComponent extends Component
      */
     public function render()
     {
-        return view('bricks::components.modal-trigger');
+        return view('bricks::components.modal.modal-trigger');
     }
 }

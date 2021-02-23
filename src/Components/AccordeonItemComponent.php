@@ -7,9 +7,10 @@ use Illuminate\View\Component;
 class AccordeonItemComponent extends Component
 {
     /**
-     * Create new CarouselComponent instance.
+     * Create new AccordeonItemComponent instance.
      *
-     * @param array $slides
+     * @param  string $header
+     * @return void
      */
     public function __construct(
         public string $header
@@ -23,6 +24,6 @@ class AccordeonItemComponent extends Component
      */
     public function render()
     {
-        return view('bricks::components.accordeon-item');
+        return view('bricks::components.accordeon.accordeon-item');
     }
 }

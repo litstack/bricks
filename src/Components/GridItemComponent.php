@@ -9,7 +9,9 @@ class GridItemComponent extends Component
     /**
      * Create new GridItemComponent instance.
      *
-     * @param array $slides
+     * @param  int  $cols
+     * @param  int  $start
+     * @return void
      */
     public function __construct(
         public int $cols,
