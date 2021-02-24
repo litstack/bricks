@@ -1,6 +1,6 @@
 <x-style>
     .embla {
-    overflow: hidden;
+        overflow: hidden;
     }
     .embla__container {
         display: flex;
@@ -8,7 +8,7 @@
         -webkit-touch-callout: none;
         -khtml-user-select: none;
         -webkit-tap-highlight-color: transparent;
-    }ß
+    }
 </x-style>
 <div
     class="embla"
