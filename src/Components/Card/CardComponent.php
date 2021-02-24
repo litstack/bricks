@@ -7,12 +7,14 @@ use Illuminate\View\Component;
 
 class CardComponent extends Component
 {
+    /**+
+     *
+     */
+    public $href;
+
     /**
      * Create new CardComponent instance.
      *
-     * @param  string|null $topline
-     * @param  string|null $headline
-     * @param  string|null $subline
      * @param  string|null $route
      * @param  string|null $link
      * @param  string|null $linktext
@@ -21,16 +23,13 @@ class CardComponent extends Component
      * @return void
      */
     public function __construct(
-        public string | null $topline = null,
-        public string | null $headline = null,
-        public string | null $subline = null,
         public string | null $route = null,
         public string | null $link = null,
         public string | null $linktext = null,
         public bool | null $blank = false,
-        public Media | null $image = null,
+        public $image = null,
     ) {
-        //
+        $this->href = isset($route) ? $route : (isset($link) ? $link : null);
     }
 
     /**

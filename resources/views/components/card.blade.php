@@ -1,24 +1,14 @@
-@php
-    $tag = isset($route) || isset($link) ? 'a' : 'div';
-    $href = isset($route) ? $route : (isset($link) ? $link : null);
-@endphp
 <div
     @if($href)href="{{ $href }}"@endif
-    class="block p-4 shadow-sm"
+    {{ $attributes->merge(['class' => 'block p-4 bg-white shadow-lg']) }}
 >
     {{-- Card Header --}}
-    @if($topline)
-        <div class="text-xs">{{ $topline }}</div>
-    @endif
-    @if($headline)
-        <div class="text-lg font-semibold">{{ $headline }}</div>
-    @endif
-    @if($subline)
-        <div class="text-base">{{ $subline }}</div>
-    @endif
+    @isset($header)
+        {{ $header }}
+    @endisset
     
     {{-- Card Body --}}
-    <div class="mt-2">
+    <div>
         {{ $slot }}
         {{-- Link --}}
         @if($linktext && $href)
