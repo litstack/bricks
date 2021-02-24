@@ -24,7 +24,7 @@ class SectionComponent extends Component
      */
     public function __construct(
         public string | null $title = null,
-        public string $variant,
+        public string | null $variant = null,
         public bool $gap,
         public bool $container,
         $px = null,
