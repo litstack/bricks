@@ -1,6 +1,6 @@
 <?php
 
-namespace Litstack\Bricks\Components;
+namespace Litstack\Bricks\Components\Carousel;
 
 use Illuminate\View\Component;
 

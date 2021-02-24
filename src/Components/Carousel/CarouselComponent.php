@@ -1,20 +1,21 @@
 <?php
 
-namespace Litstack\Bricks\Components;
+namespace Litstack\Bricks\Components\Carousel;
 
 use Illuminate\View\Component;
 
-class AccordeonComponent extends Component
+class CarouselComponent extends Component
 {
     /**
-     * Create new AccordeonComponent instance.
+     * Create new CarouselComponent instance.
      *
-     * @param  bool $multiple
+     * @param  string|null $id
      * @return void
      */
     public function __construct(
-        public bool $multiple = false
+        public string | null $id = null,
     ) {
+        //
     }
 
     /**
@@ -24,6 +25,6 @@ class AccordeonComponent extends Component
      */
     public function render()
     {
-        return view('bricks::components.accordeon.accordeon');
+        return view('bricks::components.carousel.carousel');
     }
 }

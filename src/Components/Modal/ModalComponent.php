@@ -1,6 +1,6 @@
 <?php
 
-namespace Litstack\Bricks\Components;
+namespace Litstack\Bricks\Components\Modal;
 
 use Illuminate\View\Component;
 

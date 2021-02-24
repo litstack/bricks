@@ -1,6 +1,6 @@
 <?php
 
-namespace Litstack\Bricks\Components;
+namespace Litstack\Bricks\Components\Card;
 
 use Ignite\Crud\Models\Media;
 use Illuminate\View\Component;

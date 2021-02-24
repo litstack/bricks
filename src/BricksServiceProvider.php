@@ -14,16 +14,15 @@ class BricksServiceProvider extends ServiceProvider
      * @var array
      */
     protected $components = [
-        'lit-carousel'        => Components\CarouselComponent::class,
-        'lit-image-carousel'  => Components\ImageCarouselComponent::class,
-        'lit-carousel-arrows' => Components\CarouselArrowsComponent::class,
-        'lit-modal'           => Components\ModalComponent::class,
-        'lit-modal-trigger'   => Components\ModalTriggerComponent::class,
+        'lit-accordeon'       => Components\Accordeon\AccordeonComponent::class,
+        'lit-accordeon-item'  => Components\Accordeon\AccordeonItemComponent::class,
+        'lit-carousel'        => Components\Carousel\CarouselComponent::class,
+        'lit-carousel-arrows' => Components\Carousel\CarouselArrowsComponent::class,
+        'lit-modal'           => Components\Modal\ModalComponent::class,
+        'lit-modal-trigger'   => Components\Modal\ModalTriggerComponent::class,
         'lit-section'         => Components\SectionComponent::class,
         'lit-grid-item'       => Components\GridItemComponent::class,
-        'lit-card'            => Components\CardComponent::class,
-        'lit-accordeon'       => Components\AccordeonComponent::class,
-        'lit-accordeon-item'  => Components\AccordeonItemComponent::class,
+        'lit-card'            => Components\Card\CardComponent::class,
     ];
 
     /**

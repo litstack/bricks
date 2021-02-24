@@ -1,20 +1,21 @@
 <?php
 
-namespace Litstack\Bricks\Components;
+namespace Litstack\Bricks\Components\Modal;
 
 use Illuminate\View\Component;
 
-class AccordeonItemComponent extends Component
+class ModalTriggerComponent extends Component
 {
     /**
-     * Create new AccordeonItemComponent instance.
+     * Create a new ModalTriggerComponent instance.
      *
-     * @param  string $header
+     * @param  string $id
      * @return void
      */
     public function __construct(
-        public string $header
+        public string $id,
     ) {
+        //
     }
 
     /**
@@ -24,6 +25,6 @@ class AccordeonItemComponent extends Component
      */
     public function render()
     {
-        return view('bricks::components.accordeon.accordeon-item');
+        return view('bricks::components.modal.modal-trigger');
     }
 }
