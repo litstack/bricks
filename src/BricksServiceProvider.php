@@ -14,16 +14,18 @@ class BricksServiceProvider extends ServiceProvider
      * @var array
      */
     protected $components = [
-        'lit-accordeon'       => Components\Accordeon\AccordeonComponent::class,
-        'lit-accordeon-item'  => Components\Accordeon\AccordeonItemComponent::class,
-        'lit-carousel'        => Components\Carousel\CarouselComponent::class,
-        'lit-carousel-arrows' => Components\Carousel\CarouselArrowsComponent::class,
-        'lit-modal'           => Components\Modal\ModalComponent::class,
-        'lit-modal-trigger'   => Components\Modal\ModalTriggerComponent::class,
-        'lit-section'         => Components\SectionComponent::class,
-        'lit-grid-item'       => Components\GridItemComponent::class,
-        'lit-card'            => Components\Card\CardComponent::class,
-        'lit-edgedrop'        => Components\EdgedropComponent::class,
+        'lit-accordeon'              => Components\Accordeon\AccordeonComponent::class,
+        'lit-accordeon-item'         => Components\Accordeon\AccordeonItemComponent::class,
+        'lit-carousel'               => Components\Carousel\CarouselComponent::class,
+        'lit-carousel-arrows'        => Components\Carousel\CarouselArrowsComponent::class,
+        'lit-modal'                  => Components\Modal\ModalComponent::class,
+        'lit-modal-trigger'          => Components\Modal\ModalTriggerComponent::class,
+        'lit-scroll-gallery'         => Components\ScrollGallery\ScrollGalleryComponent::class,
+        'lit-scroll-gallery-trigger' => Components\ScrollGallery\ScrollGalleryTriggerComponent::class,
+        'lit-section'                => Components\SectionComponent::class,
+        'lit-grid-item'              => Components\GridItemComponent::class,
+        'lit-card'                   => Components\Card\CardComponent::class,
+        'lit-edgedrop'               => Components\EdgedropComponent::class,
     ];
 
     /**

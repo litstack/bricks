@@ -9,7 +9,7 @@ const galleries = document.querySelectorAll('.lit-scroll-gallery');
 
 // gallery open
 for (const galleryOpenEl of galleryOpenEls) {
-    galleryOpenEl.addEventListener('click', function (event) {
+    galleryOpenEl.addEventListener('click', function(event) {
         event.preventDefault();
         if (
             this.hasAttribute('data-desktop-only') &&
@@ -20,14 +20,16 @@ for (const galleryOpenEl of galleryOpenEls) {
         let gallery = this.getAttribute('data-gallery');
         document.querySelector('#' + gallery).classList.add('is-visible');
         let anchor = this.getAttribute('href');
-        document.querySelector(anchor).scrollIntoView();
+        if (anchor) {
+            document.querySelector(anchor).scrollIntoView();
+        }
         disableBodyScroll(galleryOpenEl);
     });
 }
 
 // gallery close button
 for (const galleryCloseEl of galleryCloseEls) {
-    galleryCloseEl.addEventListener('click', function (event) {
+    galleryCloseEl.addEventListener('click', function(event) {
         event.preventDefault();
         this.parentNode.parentNode.classList.remove('is-visible');
         bodyScrollLock.clearAllBodyScrollLocks();
@@ -35,7 +37,7 @@ for (const galleryCloseEl of galleryCloseEls) {
 }
 
 // gallery close esc
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', event => {
     if (event.key == 'Escape') {
         for (const gallery of galleries) {
             gallery.classList.remove('is-visible');
