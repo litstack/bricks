@@ -9,13 +9,15 @@ class SectionComponent extends Component
     /**
      * Create new SectionComponent instance.
      *
-     * @param  bool $gap
      * @param  bool $container
+     * @param  int  $cols
+     * @param  int  $gap
      * @return void
      */
     public function __construct(
-        public bool | null $gap = null,
         public bool | null $container = null,
+        public int | null $cols = null,
+        public int | null $gap = null,
     ) {
         //
     }

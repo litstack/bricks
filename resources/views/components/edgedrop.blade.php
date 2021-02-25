@@ -1,5 +1,5 @@
 
-<x-lit-section gap container py="0">
+<x-lit-section>
     <div
         class="
             relative col-span-1
