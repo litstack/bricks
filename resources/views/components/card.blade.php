@@ -1,7 +1,7 @@
 <div class="relative">
     <div class="absolute top-0 left-0 w-full h-full shadow-md"></div>
     <div
-        {{ $attributes->merge(['class' => 'block h-full relative p-4 z-10 bg-white']) }}
+        {{ $attributes->merge(['class' => 'block h-full relative p-8 z-10 bg-white']) }}
     >
         {{-- Card Header --}}
         @isset($header)
