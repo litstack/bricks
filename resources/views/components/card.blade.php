@@ -22,7 +22,7 @@
     
        {{-- Card Image --}}
         @if($image)
-        <div class="relative mt-10 -mx-6 -mb-6">
+        <div class="relative mt-10 -mx-8 -mb-8">
             @if($href)
             <a href="{{ $href }}" target="{{ $blank ? '_blank' : '_self' }}" >
                 @endif
