@@ -2,7 +2,6 @@
 
 namespace Litstack\Bricks\Components\Card;
 
-use Ignite\Crud\Models\Media;
 use Illuminate\View\Component;
 
 class CardComponent extends Component
@@ -15,18 +14,20 @@ class CardComponent extends Component
     /**
      * Create new CardComponent instance.
      *
-     * @param  string|null $route
-     * @param  string|null $link
-     * @param  string|null $linktext
-     * @param  bool|null   $blank
-     * @param  Media|null  $image
+     * @param  null|string $route
+     * @param  null|string $link
+     * @param  null|string $linktext
+     * @param  null|bool   $blank
+     * @param  null|bool   $justify
+     * @param  mixed|null  $image
      * @return void
      */
     public function __construct(
-        public string | null $route = null,
-        public string | null $link = null,
-        public string | null $linktext = null,
-        public bool | null $blank = false,
+        public ?string $route = null,
+        public ?string $link = null,
+        public ?string $linktext = null,
+        public ?bool $blank = false,
+        public ?bool $justify = false,
         public $image = null,
     ) {
         $this->href = isset($route) ? $route : (isset($link) ? $link : null);

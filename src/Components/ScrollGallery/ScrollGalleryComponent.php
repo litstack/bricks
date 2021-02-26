@@ -11,12 +11,12 @@ class ScrollGalleryComponent extends Component
      * Create a new ScrollGalleryComponent.
      *
      * @param  string               $id
-     * @param  MediaCollection|null $images Media Collection
+     * @param  null|MediaCollection $images
      * @return void
      */
     public function __construct(
         public string $id,
-        public MediaCollection | null $images = null
+        public ?MediaCollection $images = null
     ) {
         //
     }

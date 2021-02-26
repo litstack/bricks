@@ -1,22 +1,23 @@
-<div class="relative">
-    <div class="absolute top-0 left-0 w-full h-full shadow-md"></div>
+<div class="relative {{ !$justify ?: 'h-full' }}">
+    <div class="absolute top-0 left-0 w-full h-full shadow-md "></div>
     <div
-        {{ $attributes->merge(['class' => 'block h-full relative p-8 z-10 bg-white']) }}
+        {{ $attributes->merge(['class' => 'flex flex-col justify-between h-full relative p-8 z-10 bg-white']) }}
     >
-        {{-- Card Header --}}
-        @isset($header)
-            {{ $header }}
-        @endisset
-    
-        {{-- Card Body --}}
         <div>
-            {{ $slot }}
-            {{-- Link --}}
-            @if($href && !$image)
-            <a href="{{ $href }}" target="{{ $blank ? '_blank' : '_self' }}" class="block pt-2">
-                {{ $linktext ?: $href }}
-            </a>
-            @endif
+            {{-- Card Header --}}
+            @isset($header)
+                {{ $header }}
+            @endisset
+            {{-- Card Body --}}
+            <div>
+                {{ $slot }}
+                {{-- Link --}}
+                @if($href && !$image)
+                <a href="{{ $href }}" target="{{ $blank ? '_blank' : '_self' }}" class="block pt-2">
+                    {{ $linktext ?: $href }}
+                </a>
+                @endif
+            </div>
         </div>
     
     
