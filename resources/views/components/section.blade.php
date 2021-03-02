@@ -1,5 +1,5 @@
-<section
-    {{ $attributes->merge(['class' => 'relative overflow-hidden']) }}
+<{{ $tag ?: 'section' }}
+    {{ $attributes->merge(['class' => 'relative']) }}
 >
     <div
         class="
@@ -10,4 +10,4 @@
     ">
         {{ $slot }}
     </div>
-</section>
+</{{ $tag ?: 'section'}}>
