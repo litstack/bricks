@@ -43,7 +43,7 @@ Add the block to your template:
 You can publish the templates to `resources/views/vendor/bricks/` and edit them to your needs:
 
 ```shell
-php artisan vendor:publish --provider="Litstack\Bricks\BricksServiceProvider"
+php artisan vendor:publish --provider="Litstack\Bricks\BricksServiceProvider --tag=views"
 ```
 
 ## List of Bricks

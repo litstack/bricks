@@ -17,6 +17,7 @@
     },
     "homepage": "https://github.com/litstack/bricks#readme",
     "dependencies": {
+        "@popperjs/core": "^2.9.0",
         "accordion-js": "^3.1.1",
         "body-scroll-lock": "^3.1.5",
         "embla-carousel": "^4.1.3",
