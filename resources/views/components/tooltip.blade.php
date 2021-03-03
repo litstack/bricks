@@ -1,8 +1,14 @@
-<div id="{{ $id }}" class="inline-block lit-tooltip">
+<div id="{{ $id }}" {{ $attributes->merge(['class' => 'inline-block lit-tooltip-trigger']) }}>
     {{ $slot }}
 </div>
 
-<div role="tooltip" data-tooltip-id="{{ $id }}">
+<div
+    role="tooltip"
+    data-tooltip-id="{{ $id }}"
+    data-offset-x="{{ $offsetX ?: 0 }}"
+    data-offset-y="{{ $offsetY ?: 0 }}"
+    class="lit-tooltip"
+>
     {{ $tooltip }}
     <div class="lit-tooltip-arrow" data-popper-arrow></div>
 </div>
