@@ -1,29 +1,24 @@
-<div id="{{ $id }}" {{ $attributes->merge(['class' => 'inline-block lit-tooltip-trigger']) }}>
+<div
+    id="{{ $id }}"
+    {{ $attributes->merge(['class' => 'inline-block lit-tooltip-trigger']) }}
+>
     {{ $slot }}
 </div>
 
 <div
     role="tooltip"
     data-tooltip-id="{{ $id }}"
+    data-placement="{{ $placement }}"
     data-offset-x="{{ $offsetX ?: 0 }}"
     data-offset-y="{{ $offsetY ?: 0 }}"
-    class="lit-tooltip"
+    {{ $open ? 'data-show' : '' }}
+    class="hidden {{ $tooltipClass ?: 'px-2 py-1 bg-gray-800 text-white shadow-lg lit-tooltip rounded-sm text-xs' }}"
 >
     {{ $tooltip }}
     <div class="lit-tooltip-arrow" data-popper-arrow></div>
 </div>
 
 <x-style>
-.lit-tooltip {
-    background: #333;
-    color: white;
-    font-weight: bold;
-    padding: 4px 8px;
-    font-size: 13px;
-    border-radius: 4px;
-    display: none;
-}
-
 .lit-tooltip[data-show] {
     display: block;
 }

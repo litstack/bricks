@@ -17,8 +17,12 @@ class TooltipComponent extends Component
      */
     public function __construct(
         public ?string $tooltip = null,
+        public ?string $placement = null,
+        public ?bool $click = null,
         public ?int $offsetX = null,
         public ?int $offsetY = null,
+        public ?string $tooltipClass = null,
+        public ?bool $open = null,
     ) {
         $this->id = Str::random(32);
     }

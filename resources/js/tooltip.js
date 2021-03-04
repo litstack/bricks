@@ -2,7 +2,7 @@ import { createPopper } from '@popperjs/core';
 
 const elements = document.querySelectorAll('.lit-tooltip-trigger');
 
-elements.forEach((element) => {
+elements.forEach(element => {
     const id = element.getAttribute('id');
 
     const tooltip = document.querySelector(`[data-tooltip-id="${id}"]`);
@@ -17,9 +17,16 @@ elements.forEach((element) => {
         },
     };
 
-    const popperInstance = createPopper(element, tooltip, {
+    const placement = {
+        placement: tooltip.getAttribute('data-placement') || 'bottom',
+    };
+
+    const options = {
+        ...placement,
         modifiers: [{ ...offset }],
-    });
+    };
+
+    const popperInstance = createPopper(element, tooltip, options);
 
     function show() {
         // Make the tooltip visible
@@ -53,11 +60,11 @@ elements.forEach((element) => {
     const showEvents = ['mouseenter', 'focus'];
     const hideEvents = ['mouseleave', 'blur'];
 
-    showEvents.forEach((event) => {
+    showEvents.forEach(event => {
         element.addEventListener(event, show);
     });
 
-    hideEvents.forEach((event) => {
+    hideEvents.forEach(event => {
         element.addEventListener(event, hide);
     });
 });
