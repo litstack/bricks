@@ -26,7 +26,10 @@ class BricksServiceProvider extends ServiceProvider
         'lit-grid-item'              => Components\GridItemComponent::class,
         'lit-card'                   => Components\Card\CardComponent::class,
         'lit-edgedrop'               => Components\EdgedropComponent::class,
-        'lit-tooltip'               => Components\Tooltip\TooltipComponent::class,
+        'lit-tooltip'                => Components\Tooltip\TooltipComponent::class,
+        'lit-map'                    => Components\Map\MapComponent::class,
+        'lit-map-marker'             => Components\Map\MapMarkerComponent::class,
+        'lit-map-pin'                => Components\Map\MapPinComponent::class,
     ];
 
     /**
