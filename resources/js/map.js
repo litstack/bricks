@@ -1,8 +1,11 @@
 var markersOnMap = [];
 
-const infowindow = new google.maps.InfoWindow({
-    content: '',
-});
+if (document.querySelector('#lit-map')) {
+    initMap();
+    const infowindow = new google.maps.InfoWindow({
+        content: '',
+    });
+}
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('lit-map'), {
@@ -66,8 +69,4 @@ for (let index = 0; index < checkboxes.length; index++) {
         });
         filterMarkers(filters);
     });
-}
-
-if (document.querySelector('#lit-map')) {
-    initMap();
 }
