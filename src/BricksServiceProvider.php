@@ -30,6 +30,8 @@ class BricksServiceProvider extends ServiceProvider
         'lit-map'                    => Components\Map\MapComponent::class,
         'lit-map-marker'             => Components\Map\MapMarkerComponent::class,
         'lit-map-pin'                => Components\Map\MapPinComponent::class,
+        'lit-dropdown'               => Components\Dropdown\DropdownComponent::class,
+        'lit-dropdown-item'          => Components\Dropdown\DropdownItemComponent::class,
     ];
 
     /**
