@@ -17,7 +17,7 @@
     @if ($noArrow != true)
     <div class="lit-dropdown-arrow" data-popper-arrow></div>
     @endif
-    {{ $slot }} {{ $noArrow != true }}
+    {{ $slot }}
 </ul>
 
 
