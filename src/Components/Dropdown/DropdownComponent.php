@@ -10,6 +10,8 @@ class DropdownComponent extends Component
     public $id;
 
     public function __construct(
+        public ?string $trigger = null,
+        public ?string $group = null,
         public ?string $placement = null,
         public ?string $buttonClass = null,
         public ?int $offsetX = null,

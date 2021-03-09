@@ -1,8 +1,10 @@
 var markersOnMap = [];
 
+let infowindow;
+
 if (document.querySelector('#lit-map')) {
     initMap();
-    const infowindow = new google.maps.InfoWindow({
+    infowindow = new google.maps.InfoWindow({
         content: '',
     });
 }
