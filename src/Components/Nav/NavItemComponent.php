@@ -12,11 +12,13 @@ class NavItemComponent extends Component
     public function __construct(
         public ListItem $item,
         public string $level,
+        public string | null $outerClass = null,
         public string $dropdownClass,
         public string $active,
         public string $placement,
         public ?array $offset = null,
         public ?bool $root = null,
+        public ?bool $noArrow = null,
     ) {
     }
 

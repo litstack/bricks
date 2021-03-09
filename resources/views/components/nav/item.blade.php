@@ -1,5 +1,5 @@
 @if ($root)
-<li class="inline-block {{ hasActiveChild($item) || isActive($item) ? $active : '' }}">
+<li class="inline-block {{ $outerClass }} {{ hasActiveChild($item) || isActive($item) ? $active : '' }}">
 @endif
     @if($item->children->count() < 1)
         @if ($root)
@@ -30,11 +30,11 @@
     <x-lit-dropdown
         placement="{{ $placement }}"
         class="{{ $dropdownClass ?: 'bg-blue-900' }}"
-        buttonClass="px-2"
         trigger="mouseenter"
         group="level-{{ $level }}"
         offsetX="{{ $offset ? $offset[0] : '0' }}"
         offsetY="{{ $offset ? $offset[1] : '0' }}"
+        noArrow="{{ $noArrow ? true : false }}"
     >
         <x-slot name="button">
             <a

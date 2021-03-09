@@ -14,8 +14,10 @@
     data-offset-x="{{ $offsetX ?: 0 }}"
     data-offset-y="{{ $offsetY ?: 0 }}"
 >
+    @if ($noArrow != true)
     <div class="lit-dropdown-arrow" data-popper-arrow></div>
-    {{ $slot }}
+    @endif
+    {{ $slot }} {{ $noArrow != true }}
 </ul>
 
 

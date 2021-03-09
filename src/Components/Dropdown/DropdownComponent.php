@@ -16,6 +16,7 @@ class DropdownComponent extends Component
         public ?string $buttonClass = null,
         public ?int $offsetX = null,
         public ?int $offsetY = null,
+        public ?bool $noArrow = null,
 
     ) {
         $this->id = Str::random(32);
