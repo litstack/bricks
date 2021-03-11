@@ -10,7 +10,7 @@ class MapComponent extends Component
     public $id;
 
     public function __construct(
-        public ?string $apiKey = null,
+        public string $apiKey,
         public ?float $lat = null,
         public ?float $lng = null,
         public ?int $zoom = null,
