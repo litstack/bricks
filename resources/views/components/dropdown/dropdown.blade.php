@@ -6,7 +6,7 @@
     {{ $button }}
 </div>
 <ul
-    {{ $attributes->merge(['class' => 'hidden lit-dropdown py-1 shadow-lg z-10']) }}
+    {{ $attributes->merge(['class' => 'hidden lit-dropdown py-1 z-10']) }}
     data-dropdown-id="{{ $id }}"
     data-group="{{ $group ?: '' }}"
     data-trigger-event="{{ $trigger ?: 'click' }}"

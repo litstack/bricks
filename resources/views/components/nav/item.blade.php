@@ -17,9 +17,9 @@
         @else
         <x-lit-dropdown-item
             href="{{ $item->route ?: $item->url }}"
-            {{ $attributes->merge(['class' => 'flex items-center '. (hasActiveChild($item) || isActive($item) ? $active : '')]) }}
+            {{ $attributes->merge(['class' => (hasActiveChild($item) || isActive($item) ? $active : '')]) }}
         >
-            <div data-hide-dropdown-group="level-{{ $level }}">
+            <div data-hide-dropdown-group="level-{{ $level }}" class="flex items-center">
                 @hasslot($title)
                 {{ $title }}
                 @else
