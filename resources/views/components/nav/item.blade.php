@@ -5,7 +5,7 @@
         @if ($root)
         <a
             href="{{ $item->route ?: $item->url }}"
-            {{ $attributes->merge(['class' => 'inline-block']) }}
+            {{ $attributes->merge(['class' => 'inline-block '. (hasActiveChild($item) || isActive($item) ? $active : '')]) }}
             data-hide-dropdown-group="level-{{ $level }}"
         >
             @hasslot($title)
@@ -17,7 +17,6 @@
         @else
         <x-lit-dropdown-item
             href="{{ $item->route ?: $item->url }}"
-
             {{ $attributes->merge(['class' => 'flex items-center '. (hasActiveChild($item) || isActive($item) ? $active : '')]) }}
         >
             <div data-hide-dropdown-group="level-{{ $level }}">
@@ -45,7 +44,7 @@
                 <x-slot name="button">
                     <a
                         href="{{ $item->route ?: $item->url }}"
-                        {{ $attributes->merge(['class' => 'flex items-center']) }}
+                        {{ $attributes->merge(['class' => 'flex items-center '. (hasActiveChild($item) || isActive($item) ? $active : '')]) }}
                     >
                         @hasslot($title)
                         {{ $title }}
