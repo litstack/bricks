@@ -1,4 +1,4 @@
-<div class="relative {{ !$justify ?: 'h-full' }}">
+<div class="relative {{ $justify ? 'h-full' : '' }}">
     <div class="absolute top-0 left-0 w-full h-full shadow-md "></div>
     <div
         {{ $attributes->merge(['class' => 'flex flex-col justify-between h-full relative p-8 z-10 bg-white']) }}
