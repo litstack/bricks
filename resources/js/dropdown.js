@@ -142,7 +142,6 @@ const hide = (dropdown, popperInstance) => {
             { ...getOffset(dropdown) },
         ],
     });
-    console.log('hide');
     window.removeEventListener('click', hide);
 };
 
