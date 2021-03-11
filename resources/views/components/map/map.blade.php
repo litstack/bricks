@@ -1,4 +1,6 @@
+@if ($apiKey)
 <script src="https://maps.googleapis.com/maps/api/js?key={{ $apiKey }}&libraries=places"></script>
+@endif
 <script>
     var markers = [
         {{ $slot }}
@@ -10,10 +12,11 @@
         lat: {{ $lat }},
         lng: {{ $lng }},
     }@else null @endif;
-    
+
+    var zoom = @if($zoom){{ $zoom }}@else 14 @endif;
 </script>
 
-<div id="lit-map" {{ $attributes->merge(['class' => '']) }}></div>
+<div {{ $attributes->merge(['class' => '']) }} data-lit-map="{{ $id }}"></div>
 
 <x-style>
     .gm-style-iw, .gm-style-iw-c, .gm-style{

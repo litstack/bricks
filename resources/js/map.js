@@ -2,16 +2,18 @@ var markersOnMap = [];
 
 let infowindow;
 
-if (document.querySelector('#lit-map')) {
-    initMap();
+const maps = document.querySelectorAll('[data-lit-map]');
+
+maps.forEach(element => {
+    initMap(element);
     infowindow = new google.maps.InfoWindow({
         content: '',
     });
-}
+});
 
-function initMap() {
-    map = new google.maps.Map(document.getElementById('lit-map'), {
-        zoom: 14,
+function initMap(element) {
+    map = new google.maps.Map(element, {
+        zoom,
         center: center || markers[0].position,
         styles: styles || null,
     });
