@@ -24,6 +24,7 @@
         }
     },
     "require": {
+        "php": "^8.0",
         "litstack/litstack": "^3.0",
         "litstack/bladesmith": "1.x-dev"
     },

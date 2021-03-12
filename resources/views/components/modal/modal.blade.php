@@ -1,7 +1,12 @@
 <div class="modal micromodal-slide" id="{{ $id }}" aria-hidden="true">
     <div class="fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center bg-black bg-opacity-50 modal__overlay" tabindex="-1" data-micromodal-close>
-        <div class="container relative max-h-screen p-8 bg-white rounded-lg modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-{{ $id }}-title">
-            <header class="flex justify-between w-full">
+        <div
+            {{ $attributes->merge(['class' => 'container relative flex flex-col max-h-screen p-8 bg-white rounded-lg modal__container']) }}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-{{ $id }}-title"
+        >
+            <header class="flex justify-between w-full ">
                 <div class="mr-6">
                     @if ($title)
                             <h2>
@@ -11,7 +16,7 @@
                 </div>
                 <button class="absolute top-0 right-0 mt-1 mr-2 modal__close" aria-label="Close modal" data-micromodal-close></button>
             </header>
-            <main>
+            <main class="overflow-scroll ">
                 {{ $slot }}
             </main>
             @if (!$hideFooter)
