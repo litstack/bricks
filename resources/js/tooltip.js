@@ -4,6 +4,7 @@ const elements = document.querySelectorAll('.lit-tooltip-trigger');
 
 elements.forEach(element => {
     const id = element.getAttribute('id');
+    const needsClick = element.getAttribute('data-tooltip-click') !== null;
 
     const tooltip = document.querySelector(`[data-tooltip-id="${id}"]`);
 
@@ -57,14 +58,21 @@ elements.forEach(element => {
         });
     }
 
-    const showEvents = ['mouseenter', 'focus'];
-    const hideEvents = ['mouseleave', 'blur'];
+    if (!needsClick) {
+        const showEvents = ['mouseenter', 'focus'];
+        const hideEvents = ['mouseleave', 'blur'];
 
-    showEvents.forEach(event => {
-        element.addEventListener(event, show);
-    });
+        showEvents.forEach(event => {
+            element.addEventListener(event, show);
+        });
 
-    hideEvents.forEach(event => {
-        element.addEventListener(event, hide);
-    });
+        hideEvents.forEach(event => {
+            element.addEventListener(event, hide);
+        });
+    } else {
+        const close = document.querySelector(`[data-tooltip-close="${id}"]`);
+
+        element.addEventListener('click', show);
+        close.addEventListener('click', hide);
+    }
 });
