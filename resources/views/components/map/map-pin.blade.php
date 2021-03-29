@@ -1,6 +1,5 @@
 icon: {
-    url:
-        'data:image/svg+xml;utf-8, {{ $slot }}',
+    url: encodeInlineSvg('{{ $slot }}'),
     size: new google.maps.Size({{ $width }}, {{ $height }}),
     scaledSize: new google.maps.Size({{ $width }}, {{ $height }}),
 },

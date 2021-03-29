@@ -25,6 +25,12 @@ function initMap(element) {
     for (var i = 0; i < markers.length; i++) {
         addMarker(markers[i]);
     }
+
+    if (clusterStyles) {
+        new MarkerClusterer(map, markersOnMap, {
+            styles: clusterStyles,
+        });
+    }
 }
 
 function addMarker(marker) {
