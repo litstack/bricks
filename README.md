@@ -119,7 +119,7 @@ The width of each slide is controlled via the min-width property.
 | offsetX      | Number | Offet X in px                                        |          |                         |
 | offsetY      | Number | Offet Y in px                                        |          |                         |
 
-## Modal
+### Modal
 
 ```html
 <x-lit-modal-trigger id="modal-1">
@@ -134,7 +134,7 @@ The width of each slide is controlled via the min-width property.
 </x-lit-modal>
 ```
 
-### Attributes
+#### Attributes
 
 Modal
 
@@ -150,7 +150,7 @@ Trigger
 | --------- | --------------- | ------------------------------------ | -------- |
 | id        | String / Number | Identifier linking modal and trigger | ✅       |
 
-## Map
+### Map
 
 Map with a simple Marker, will be panned to the marker automatically
 
@@ -170,7 +170,7 @@ Marker with an info window
 </x-lit-map-marker>
 ```
 
-Marker with a custom Pin-Icon. Notice that you set all styles of an inline SVG to fill with rgb as HEX will not work for some reason.
+#### Marker with a custom Pin-Icon.
 
 ```html
 <x-lit-map-marker lat="54.32334600482515" lng="10.12654862484407">
@@ -207,7 +207,7 @@ Marker with a custom Pin-Icon. Notice that you set all styles of an inline SVG t
 </x-lit-map-marker>
 ```
 
-Filter markers on map
+#### Filter markers on map
 
 ```html
 <input type="checkbox" value="1" class="lit-map-filter" />Category 1
@@ -217,6 +217,60 @@ Filter markers on map
 <x-lit-map apiKey="ABC-Google-API-Key" class="mt-32 h-96" zoom="12">
     <x-lit-map-marker lat="54.323" lng="10.126" :categories="[1,2]" />
     <x-lit-map-marker lat="54.325" lng="10.122" :categories="[1]" />
+</x-lit-map>
+```
+
+#### Clustering
+
+You can cluster your pins by using the `cluster`slot and provide up to 5 `<x-lit-map-cluster />`. Each cluster should be passed a relativly simple inline svg in the main slot.
+
+```html
+<x-lit-map apiKey="ABC-Google-API-Key" class="mt-32 h-96" zoom="12">
+    <x-lit-map-marker lat="54.323" lng="10.126" />
+    <x-lit-map-marker lat="54.325" lng="10.122" />
+
+    <x-slot name="cluster">
+        <x-lit-map-cluster
+            width="30"
+            height="30"
+            fontSize="12"
+            fontColor="white"
+        >
+            <svg
+                viewBox="0 0 834 834"
+                xmlns="http://www.w3.org/2000/svg"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                stroke-linejoin="round"
+                stroke-miterlimit="2"
+            >
+                <path
+                    d="M416.667 0l360.844 208.333V625L416.667 833.333 55.823 625V208.333L416.667 0z"
+                    fill="black"
+                />
+            </svg>
+        </x-lit-map-cluster>
+        <x-lit-map-cluster
+            width="40"
+            height="40"
+            fontSize="12"
+            fontColor="white"
+        >
+            <svg
+                viewBox="0 0 834 834"
+                xmlns="http://www.w3.org/2000/svg"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                stroke-linejoin="round"
+                stroke-miterlimit="2"
+            >
+                <path
+                    d="M416.667 0l360.844 208.333V625L416.667 833.333 55.823 625V208.333L416.667 0z"
+                    fill="green"
+                />
+            </svg>
+        </x-lit-map-cluster>
+    </x-slot>
 </x-lit-map>
 ```
 
@@ -232,7 +286,7 @@ Styled map
 </x-lit-map>
 ```
 
-### Attributes
+#### Attributes
 
 Map
 | Attribute | Type | Description | required |
@@ -255,7 +309,16 @@ Pin
 | width     | Number | Width of the pin in px  | ✅       |
 | height    | Number | Height of the pin in px | ✅       |
 
-## Navigation
+Cluster
+
+| Attribute | Type   | Description                      | required |
+| --------- | ------ | -------------------------------- | -------- |
+| width     | Number | Width of the cluster icon in px  | ✅       |
+| height    | Number | Height of the cluster icon in px | ✅       |
+| fontSize  | Number | Font size                        | ✅       |
+| fontColor | Strnig | Font color                       | ✅       |
+
+### Navigation
 
 ```html
 <ul class="bg-blue-500">
