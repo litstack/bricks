@@ -11,7 +11,7 @@
     }
 </x-style>
 <div
-    class="embla"
+    {{ $attributes->merge(['class' => 'embla']) }}
     @if ($id)
     data-embla-id="{{ $id }}"
     @endif
