@@ -1,28 +1,33 @@
-<x-lit-section>
+<div data-lit-edgedrop>
+    <x-lit-section>
+        <div
+            class="
+                relative  
+                col-span-{{ $offset }}
+            "
+            data-lit-edgedrop-remainder-preset
+        >
+        </div>
+        <div
+            class="
+                relative  
+                col-span-{{ config('lit-bricks.grid.cols') - $offset }}
+            "
+            data-lit-edgedrop-main-preset
+        >
+        </div>
+    </x-lit-section>
+    
     <div
-        class="
-            relative col-span-1
-            @if($start)
-            col-start-{{ $start+1 }}
-            @endif
-            @if($end)
-            col-end-{{ $end + 2 }}
-            @endif
-        "
-        id="{{ $id }}"
-    >
-    </div>
-</x-lit-section>
-
-<div
-    class="
-        relative flex mx-auto maxWidthElement
-        {{ $start ? 'justify-end' : '' }}
-    "
-    data-ref="{{ $id }}"
-    data-left="{{ $start ? false : true }}"
->
-    <div class="edgeDropContainer">
-        {{ $slot }}
+        class="relative flex mx-auto @if($end) flex-row-reverse @endif" 
+    > 
+        <div data-lit-edgedrop-main>
+            {{ $slot }}
+        </div>
+        @isset($remainder)
+        <div data-lit-edgedrop-remainder class="mx-{{ config('lit-bricks.grid.gap')}}">
+            {{ $remainder }}
+        </div>
+        @endisset
     </div>
 </div>

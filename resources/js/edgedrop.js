@@ -1,23 +1,37 @@
-const elements = document.querySelectorAll('.maxWidthElement');
+const elements = document.querySelectorAll('[data-lit-edgedrop]');
+
+const setContainerWidth = element => {
+    const remainderPreset = element.querySelector(
+        '[data-lit-edgedrop-remainder-preset]'
+    );
+    const mainPreset = element.querySelector('[data-lit-edgedrop-main-preset]');
+
+    const remainder = element.querySelector('[data-lit-edgedrop-remainder]');
+
+    if (remainder) {
+        remainder.style.width =
+            remainderPreset.getBoundingClientRect().width + 'px';
+    }
+
+    const main = element.querySelector('[data-lit-edgedrop-main]');
+    const containerWidth = element.getBoundingClientRect().width;
+    const mainStart = mainPreset.getBoundingClientRect().x;
+
+    main.style.width = containerWidth - mainStart + 'px';
+
+    /**
+     * Shrink
+     *
+     */
+    const shrink = main.querySelector('[data-shrink]');
+    if (shrink) {
+        shrink.style.width = mainPreset.getBoundingClientRect().width + 'px';
+    }
+};
 
 elements.forEach(element => {
-    let setSliderWidth = element => {
-        let id = element.dataset.ref;
-        let xLeft = document.getElementById(id).getBoundingClientRect().x;
-
-        let maxWidthElement = element.getBoundingClientRect();
-        let containerWidth = maxWidthElement.x + maxWidthElement.width - xLeft;
-
-        if (element.dataset.left) {
-            containerWidth = xLeft;
-        }
-
-        element.querySelector('.edgeDropContainer').style.width =
-            containerWidth + 'px';
-    };
-
-    setSliderWidth(element);
+    setContainerWidth(element);
     window.addEventListener('resize', () => {
-        setSliderWidth(element);
+        setContainerWidth(element);
     });
 });
