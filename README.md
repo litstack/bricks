@@ -81,6 +81,7 @@ Advanced example with dots and synced carousel acting as 'tabs'
     id="slider-1"
     class="container"
     activeClass="bg-blue-200"
+    loop
     align="start"
 >
     <div class="min-w-full">
@@ -112,13 +113,14 @@ Advanced example with dots and synced carousel acting as 'tabs'
 
 Carousel
 
-| Attribute   | Type                    | Description                                           | required |
-| ----------- | ----------------------- | ----------------------------------------------------- | -------- |
-| id          | String / Number         | Identifier to link with dots and arrows               | ✅       |
-| for         | String / Number         | Identifier to sync with another carousel              |          |
-| activeClass | String                  | class added to active slide (only ONE class allowed!) |          |
-| autoplay    | Int                     | Interval in ms, when set autoplay is active           |          |
-| align       | 'start', 'end', 'center | align active slide (default: 'start' )                |          |
+| Attribute   | Type                     | Description                                           | required |
+| ----------- | ------------------------ | ----------------------------------------------------- | -------- |
+| id          | String / Number          | Identifier to link with dots and arrows               | ✅       |
+| for         | String / Number          | Identifier to sync with another carousel              |          |
+| activeClass | String                   | class added to active slide (only ONE class allowed!) |          |
+| autoplay    | Int                      | Interval in ms, when set autoplay is active           |          |
+| align       | 'start', 'end', 'center' | align active slide (default: 'start' )                |          |
+| loop        | Bool                     | Wether the carousel should loop infinitly             |          |
 
 Dots
 
