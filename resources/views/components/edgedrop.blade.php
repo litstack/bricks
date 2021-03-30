@@ -1,4 +1,3 @@
-
 <x-lit-section>
     <div
         class="
@@ -17,7 +16,7 @@
 
 <div
     class="
-        relative flex mx-auto max-w-screen-2xl maxWidthElement
+        relative flex mx-auto maxWidthElement
         {{ $start ? 'justify-end' : '' }}
     "
     data-ref="{{ $id }}"

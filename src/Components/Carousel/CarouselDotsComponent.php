@@ -4,21 +4,19 @@ namespace Litstack\Bricks\Components\Carousel;
 
 use Illuminate\View\Component;
 
-class CarouselComponent extends Component
+class CarouselDotsComponent extends Component
 {
     /**
-     * Create new CarouselComponent instance.
+     * Create new CarouselArrowsComponent instance.
      *
-     * @param  string|null $id
+     * @param  string $id
+     * @param  string $color
      * @return void
      */
     public function __construct(
-        public ?string $id = null,
-        public ?string $for = null,
+        public string $id,
+        public ?string $wrapperClass = null,
         public ?string $activeClass = null,
-        public ?string $align = null,
-        public ?int $autoplay = null,
-        public ?bool $loop = null,
     ) {
         //
     }
@@ -30,6 +28,6 @@ class CarouselComponent extends Component
      */
     public function render()
     {
-        return view('bricks::components.carousel.carousel');
+        return view('bricks::components.carousel.carousel-dots');
     }
 }

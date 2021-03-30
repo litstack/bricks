@@ -18,6 +18,7 @@ class BricksServiceProvider extends ServiceProvider
         'lit-accordeon-item'         => Components\Accordeon\AccordeonItemComponent::class,
         'lit-carousel'               => Components\Carousel\CarouselComponent::class,
         'lit-carousel-arrows'        => Components\Carousel\CarouselArrowsComponent::class,
+        'lit-carousel-dots'          => Components\Carousel\CarouselDotsComponent::class,
         'lit-modal'                  => Components\Modal\ModalComponent::class,
         'lit-modal-trigger'          => Components\Modal\ModalTriggerComponent::class,
         'lit-scroll-gallery'         => Components\ScrollGallery\ScrollGalleryComponent::class,
