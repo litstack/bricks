@@ -7,9 +7,9 @@ use Illuminate\View\Component;
 class ScrollGalleryTriggerComponent extends Component
 {
     public function __construct(
-        public bool | null $desktopOnly = null,
+        public ?bool $desktopOnly,
         public string $id,
-        public string | null $imageId = null,
+        public ?string $imageId = null,
     ) {
         if (! $desktopOnly) {
             $desktopOnly = false;

@@ -1,4 +1,4 @@
-<div data-lit-edgedrop>
+<div data-lit-edgedrop {{ $attributes->merge(['class' => '']) }}>
     <x-lit-section>
         <div
             class="
