@@ -25,6 +25,8 @@
     }@else null @endif;
 
     var zoom = @if($zoom){{ $zoom }}@else 14 @endif;
+
+    {{ $script }}
 </script>
 
 <div {{ $attributes->merge(['class' => '']) }} data-lit-map="{{ $id }}"></div>
