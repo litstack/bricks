@@ -16,7 +16,8 @@ class ScrollGalleryComponent extends Component
      */
     public function __construct(
         public string $id,
-        public ?MediaCollection $images = null
+        public ?MediaCollection $images = null,
+        public ?array $collections = null
     ) {
         //
     }

@@ -5,11 +5,21 @@
         </button>
     </div>
     <div class="w-full h-full overflow-y-auto">
-        @foreach ($images as $image)
-        <div class="object-contain w-full h-full p-12 lit-scroll-gallery__image" id="lit-scroll-gallery-image-{{ $image->id }}">
-            <x-lit-image :image="$image" class="w-full h-full" />
-        </div>
-        @endforeach
+        @if ($collections)
+            @foreach ($collections as $images)
+                @foreach ($images as $image)
+                <div class="object-contain w-full h-full p-12 lit-scroll-gallery__image" id="lit-scroll-gallery-image-{{ $image->id }}">
+                    <x-lit-image :image="$image" class="w-full h-full" />
+                </div>
+                @endforeach
+            @endforeach
+        @else
+            @foreach ($images as $image)
+            <div class="object-contain w-full h-full p-12 lit-scroll-gallery__image" id="lit-scroll-gallery-image-{{ $image->id }}">
+                <x-lit-image :image="$image" class="w-full h-full" />
+            </div>
+            @endforeach
+        @endif
     </div>
 </div>
 
