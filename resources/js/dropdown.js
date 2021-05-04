@@ -2,6 +2,8 @@ import { createPopper } from '@popperjs/core';
 
 const elements = document.querySelectorAll('[data-lit-dropdown-trigger]');
 
+const litNavs = document.querySelectorAll('[data-lit-nav]');
+
 /**
  * Hide all members of a dropdown group, e.g. a navigation with multiple dropdowns
  *
@@ -112,6 +114,18 @@ const show = (element, dropdown, popperInstance) => {
             },
             { once: true }
         );
+
+        litNavs.forEach(nav => {
+            let closeTimeout;
+            nav.addEventListener('mouseenter', e => {
+                clearTimeout(closeTimeout);
+            });
+            nav.addEventListener('mouseleave', e => {
+                closeTimeout = setTimeout(() => {
+                    hide(dropdown, popperInstance);
+                }, 350);
+            });
+        });
 
         const items = dropdown.querySelectorAll(`[data-lit-dropdown-item]`);
         items.forEach(item => {

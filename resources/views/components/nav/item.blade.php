@@ -1,5 +1,5 @@
 @if ($root)
-<li class="inline-block {{ $outerClass }} {{ hasActiveChild($item) || isActive($item) ? $active : '' }}">
+<li class="inline-block {{ $outerClass }} {{ hasActiveChild($item) || isActive($item) ? $active : '' }}" >
 @endif
     @if($item->children->count() < 1)
         @if ($root)
@@ -18,6 +18,7 @@
         <x-lit-dropdown-item
             href="{{ $item->route ?: $item->url }}"
             {{ $attributes->merge(['class' => (hasActiveChild($item) || isActive($item) ? $active : '')]) }}
+            
         >
             <div data-hide-dropdown-group="level-{{ $level }}" class="flex items-center">
                 @hasslot($title)
@@ -30,7 +31,7 @@
         @endif
     @else
         @if (!$root)
-        <li>
+        <li >
         @endif
             <x-lit-dropdown
                 placement="{{ $placement }}"
