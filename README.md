@@ -395,8 +395,10 @@ Cluster
 
 ### Navigation
 
+The root-element of a navigation should have the `data-lit-nav` attribute to autoclose on mouseleave.
+
 ```html
-<ul class="bg-blue-500">
+<ul class="bg-blue-500" data-lit-nav>
     @foreach ($nav->main as $item)
     <x-lit-nav-item
         :item="$item"
