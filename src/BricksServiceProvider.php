@@ -36,6 +36,8 @@ class BricksServiceProvider extends ServiceProvider
         'lit-dropdown-item'          => Components\Dropdown\DropdownItemComponent::class,
         'lit-nav'                    => Components\Nav\NavComponent::class,
         'lit-nav-item'               => Components\Nav\NavItemComponent::class,
+        'lit-tabs'                   => Components\Tabs\TabsComponent::class,
+        'lit-tab'                    => Components\Tabs\TabComponent::class,
     ];
 
     /**

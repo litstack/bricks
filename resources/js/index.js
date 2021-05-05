@@ -6,3 +6,4 @@ require('./scroll-gallery-modal');
 require('./tooltip');
 require('./dropdown');
 require('./map');
+require('./tabs');
