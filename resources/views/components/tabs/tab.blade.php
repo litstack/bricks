@@ -1,9 +1,9 @@
 <a
     href="#{{ $id }}"
     data-tab="{{ $id }}"
-    {{ $attributes->merge(['class' => 'order-1 lit-tab px-2 rounded-full' . ($active ? ' active  ' : '')])}}
+    {{ $attributes->merge(['class' => 'order-1 lit-tab relative' . ($active ? ' active  ' : '')])}}
 >
-    {{ $label }}
+    <div class="pointer-events-none">{{  $label  }}</div>
 </a>
 
 <div

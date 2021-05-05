@@ -16,7 +16,7 @@ class TabComponent extends Component
      * @return void
      */
     public function __construct(
-       public string | int $label,
+       public ?string $label = null,
        public ?bool $active = null,
     ) {
         $this->id = Str::random(32);

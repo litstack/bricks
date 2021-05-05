@@ -2,7 +2,7 @@ function Tabs() {
     const components = document.querySelectorAll('[data-lit-tabs]');
 
     const bindAll = item => {
-        const menuElements = item.querySelectorAll('[data-tab]');
+        const menuElements = item.querySelectorAll(':scope > [data-tab]');
         for (var i = 0; i < menuElements.length; i++) {
             menuElements[i].addEventListener(
                 'click',
@@ -30,7 +30,7 @@ function Tabs() {
     };
 
     const clear = item => {
-        const menuElements = item.querySelectorAll('[data-tab]');
+        const menuElements = item.querySelectorAll(':scope > [data-tab]');
         for (var i = 0; i < menuElements.length; i++) {
             menuElements[i].classList.remove('active');
 
@@ -62,7 +62,7 @@ function Tabs() {
             return;
         }
 
-        const tabs = item.querySelectorAll('[data-tab-content]');
+        const tabs = item.querySelectorAll(':scope > [data-tab-content]');
 
         tabs.forEach(element => {
             contentClasses.forEach(className => {
@@ -81,7 +81,7 @@ function Tabs() {
             return;
         }
 
-        const tabs = item.querySelectorAll('[data-tab]');
+        const tabs = item.querySelectorAll(':scope > [data-tab]');
 
         tabs.forEach(element => {
             tabClasses.forEach(className => {
@@ -92,7 +92,7 @@ function Tabs() {
     const setActiveClasses = item => {
         const classes = item.getAttribute('data-active-classes');
 
-        const tabs = item.querySelectorAll('[data-tab]');
+        const tabs = item.querySelectorAll(':scope > [data-tab]');
 
         tabs.forEach(tab => {
             tab.setAttribute('data-active-classes', classes);
