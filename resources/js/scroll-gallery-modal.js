@@ -6,10 +6,11 @@ const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 const galleryOpenEls = document.querySelectorAll('.lit-open-scroll-gallery');
 const galleryCloseEls = document.querySelectorAll('.lit-close-scroll-gallery');
 const galleries = document.querySelectorAll('.lit-scroll-gallery');
+const galleryContainer = document.getElementById('scroll-gallery-container');
 
 // gallery open
 for (const galleryOpenEl of galleryOpenEls) {
-    galleryOpenEl.addEventListener('click', function(event) {
+    galleryOpenEl.addEventListener('click', function (event) {
         event.preventDefault();
 
         let gallery = this.getAttribute('data-gallery');
@@ -18,13 +19,13 @@ for (const galleryOpenEl of galleryOpenEls) {
         if (anchor) {
             document.querySelector(anchor).scrollIntoView();
         }
-        disableBodyScroll(galleryOpenEl);
+        disableBodyScroll(galleryContainer);
     });
 }
 
 // gallery close button
 for (const galleryCloseEl of galleryCloseEls) {
-    galleryCloseEl.addEventListener('click', function(event) {
+    galleryCloseEl.addEventListener('click', function (event) {
         event.preventDefault();
         this.parentNode.parentNode.classList.remove('is-visible');
         bodyScrollLock.clearAllBodyScrollLocks();
@@ -32,7 +33,7 @@ for (const galleryCloseEl of galleryCloseEls) {
 }
 
 // gallery close esc
-document.addEventListener('keydown', event => {
+document.addEventListener('keydown', (event) => {
     if (event.key == 'Escape') {
         for (const gallery of galleries) {
             gallery.classList.remove('is-visible');
