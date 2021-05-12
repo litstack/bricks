@@ -13,7 +13,7 @@ class AccordeonItemComponent extends Component
      * @return void
      */
     public function __construct(
-        public string $header
+        public ?string $header = null
     ) {
     }
 

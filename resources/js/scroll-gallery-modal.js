@@ -11,12 +11,7 @@ const galleries = document.querySelectorAll('.lit-scroll-gallery');
 for (const galleryOpenEl of galleryOpenEls) {
     galleryOpenEl.addEventListener('click', function(event) {
         event.preventDefault();
-        if (
-            this.hasAttribute('data-desktop-only') &&
-            window.innerWidth <= 768
-        ) {
-            return;
-        }
+
         let gallery = this.getAttribute('data-gallery');
         document.querySelector('#' + gallery).classList.add('is-visible');
         let anchor = this.getAttribute('href');
