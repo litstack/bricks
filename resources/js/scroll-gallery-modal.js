@@ -6,7 +6,9 @@ const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 const galleryOpenEls = document.querySelectorAll('.lit-open-scroll-gallery');
 const galleryCloseEls = document.querySelectorAll('.lit-close-scroll-gallery');
 const galleries = document.querySelectorAll('.lit-scroll-gallery');
-const galleryContainer = document.getElementById('scroll-gallery-container');
+const galleryContainer = document.getElementById(
+    'lit-scroll-gallery-container'
+);
 
 // gallery open
 for (const galleryOpenEl of galleryOpenEls) {
