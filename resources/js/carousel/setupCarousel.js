@@ -96,18 +96,17 @@ export const setupCarousel = (emblaNode) => {
         for (let i = 0; i < synced.length; i++) {
             const thumbCarousel = init(synced[i]);
             const thumbCarouselMarkup = synced[i];
+            
+            let eventName = 'click;
 
             if (thumbCarouselMarkup.hasAttribute('data-mouseover')) {
-                thumbCarousel.slideNodes().forEach((thumbNode, index) => {
-                    const onClick = onThumbClick(embla, thumbCarousel, index);
-                    thumbNode.addEventListener('mouseover', onClick, false);
-                });
-            } else {
-                thumbCarousel.slideNodes().forEach((thumbNode, index) => {
-                    const onClick = onThumbClick(embla, thumbCarousel, index);
-                    thumbNode.addEventListener('click', onClick, false);
-                });
+                eventName = 'mouseover'
             }
+            
+            thumbCarousel.slideNodes().forEach((thumbNode, index) => {
+                const onClick = onThumbClick(embla, thumbCarousel, index);
+                thumbNode.addEventListener(eventName, onClick, false);
+            });
 
             const syncThumbCarousel = followMainCarousel(embla, thumbCarousel);
             embla.on('select', syncThumbCarousel);
