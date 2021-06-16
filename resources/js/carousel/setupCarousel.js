@@ -96,13 +96,13 @@ export const setupCarousel = (emblaNode) => {
         for (let i = 0; i < synced.length; i++) {
             const thumbCarousel = init(synced[i]);
             const thumbCarouselMarkup = synced[i];
-            
-            let eventName = 'click;
+
+            let eventName = 'click';
 
             if (thumbCarouselMarkup.hasAttribute('data-mouseover')) {
-                eventName = 'mouseover'
+                eventName = 'mouseover';
             }
-            
+
             thumbCarousel.slideNodes().forEach((thumbNode, index) => {
                 const onClick = onThumbClick(embla, thumbCarousel, index);
                 thumbNode.addEventListener(eventName, onClick, false);
