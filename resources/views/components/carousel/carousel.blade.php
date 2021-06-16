@@ -10,6 +10,7 @@
     data-embla-active-class="{{ $activeClass }}"
     data-embla-align="{{ $align }}"
     data-embla-autoplay="{{ $autoplay }}"
+    data-embla-speed="{{ $speed }}"
 >
     <div class="embla__viewport">
         <div class="embla__container">
