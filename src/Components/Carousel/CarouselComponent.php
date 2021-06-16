@@ -19,6 +19,7 @@ class CarouselComponent extends Component
         public ?string $align = null,
         public ?int $autoplay = null,
         public ?bool $loop = null,
+        public ?int $speed = null,
     ) {
         //
     }

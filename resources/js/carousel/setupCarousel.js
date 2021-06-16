@@ -14,6 +14,7 @@ const init = (emblaNode) => {
     const loop = emblaNode.hasAttribute('data-embla-loop');
     const align = emblaNode.getAttribute('data-embla-align');
     const selectedClass = emblaNode.getAttribute('data-embla-active-class');
+    const speed = emblaNode.getAttribute('data-embla-speed');
 
     /**
      * Init Carousel
@@ -23,6 +24,7 @@ const init = (emblaNode) => {
         align: align || 'start',
         selectedClass,
         loop,
+        speed: speed ?? 10,
         containScroll: null,
     });
 };
