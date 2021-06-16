@@ -4,7 +4,7 @@ import { setupDotBtns, generateDotBtns, selectDotBtn } from './dotButtons';
 import { onThumbClick, followMainCarousel } from './thumbButtons';
 import { autoplay } from './autoplay';
 
-const init = emblaNode => {
+const init = (emblaNode) => {
     const carousel = emblaNode.querySelector('.embla__viewport');
 
     /**
@@ -27,7 +27,7 @@ const init = emblaNode => {
     });
 };
 
-export const setupCarousel = emblaNode => {
+export const setupCarousel = (emblaNode) => {
     // skip synced
     if (emblaNode.hasAttribute('data-embla-for')) {
         return;
@@ -95,10 +95,17 @@ export const setupCarousel = emblaNode => {
 
         for (let i = 0; i < synced.length; i++) {
             const thumbCarousel = init(synced[i]);
+            const thumbCarouselMarkup = synced[i];
+            
+            let eventName = 'click;
 
+            if (thumbCarouselMarkup.hasAttribute('data-mouseover')) {
+                eventName = 'mouseover'
+            }
+            
             thumbCarousel.slideNodes().forEach((thumbNode, index) => {
                 const onClick = onThumbClick(embla, thumbCarousel, index);
-                thumbNode.addEventListener('click', onClick, false);
+                thumbNode.addEventListener(eventName, onClick, false);
             });
 
             const syncThumbCarousel = followMainCarousel(embla, thumbCarousel);
