@@ -1,6 +1,16 @@
 # Map
 
-Map with a simple Marker, will be panned to the marker automatically
+A component to show google-maps. Make shure to include the `google-maps-api`, e.g:
+
+```html
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR-API-KEY"></script>
+```
+
+## Usage
+
+### Simple map
+
+Show a map with a simple marker that will be panned to the marker automatically
 
 ```html
 <x-lit-map class="mt-32 h-96" zoom="12">
@@ -8,7 +18,7 @@ Map with a simple Marker, will be panned to the marker automatically
 </x-lit-map>
 ```
 
-Marker with an info window
+### Marker with an info window
 
 ```html
 <x-lit-map-marker lat="54.325" lng="10.122">
@@ -18,7 +28,7 @@ Marker with an info window
 </x-lit-map-marker>
 ```
 
-## Marker with a custom Pin-Icon.
+### Marker with a custom Pin-Icon.
 
 ```html
 <x-lit-map-marker lat="54.32334600482515" lng="10.12654862484407">
@@ -55,7 +65,7 @@ Marker with an info window
 </x-lit-map-marker>
 ```
 
-## Filter markers on map
+### Filter markers on map
 
 ```html
 <input type="checkbox" value="1" class="lit-map-filter" />Category 1
@@ -68,7 +78,7 @@ Marker with an info window
 </x-lit-map>
 ```
 
-## Clustering
+### Clustering
 
 In order to make use of the clustering feature you need to include the clustering script:
 
