@@ -1,4 +1,3 @@
-<script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
 <script>
     var encodeInlineSvg = function (svg) {
         var encoded = window.btoa(svg);
