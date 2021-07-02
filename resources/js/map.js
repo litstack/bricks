@@ -4,14 +4,21 @@ let infowindow;
 
 const maps = document.querySelectorAll('[data-lit-map]');
 
-maps.forEach(element => {
-    initMap(element);
-    infowindow = new google.maps.InfoWindow({
-        content: '',
-    });
+window.addEventListener('initMap', () => {
+    setupMaps();
 });
 
+function setupMaps() {
+    maps.forEach(element => {
+        initMap(element);
+        infowindow = new google.maps.InfoWindow({
+            content: '',
+        });
+    });
+}
+
 function initMap(element) {
+    let markers = getMarkers();
     map = new google.maps.Map(element, {
         zoom,
         center: center || markers[0].position,
