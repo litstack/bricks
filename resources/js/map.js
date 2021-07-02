@@ -36,6 +36,7 @@ function initMap(element) {
     if (clusterStyles) {
         new MarkerClusterer(map, markersOnMap, {
             styles: clusterStyles,
+            maxZoom: 12,
         });
     }
 }
