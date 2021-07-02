@@ -4,7 +4,7 @@ import { setupDotBtns, generateDotBtns, selectDotBtn } from './dotButtons';
 import { onThumbClick, followMainCarousel } from './thumbButtons';
 import { autoplay } from './autoplay';
 
-const init = (emblaNode) => {
+const init = emblaNode => {
     const carousel = emblaNode.querySelector('.embla__viewport');
 
     /**
@@ -14,7 +14,7 @@ const init = (emblaNode) => {
     const loop = emblaNode.hasAttribute('data-embla-loop');
     const align = emblaNode.getAttribute('data-embla-align');
     const selectedClass = emblaNode.getAttribute('data-embla-active-class');
-    const speed = emblaNode.getAttribute('data-embla-speed');
+    const speed = emblaNode.getAttribute('data-embla-speed') || null;
 
     /**
      * Init Carousel
@@ -24,12 +24,12 @@ const init = (emblaNode) => {
         align: align || 'start',
         selectedClass,
         loop,
-        speed: speed ?? 10,
+        speed: speed || 10,
         containScroll: null,
     });
 };
 
-export const setupCarousel = (emblaNode) => {
+export const setupCarousel = emblaNode => {
     // skip synced
     if (emblaNode.hasAttribute('data-embla-for')) {
         return;
