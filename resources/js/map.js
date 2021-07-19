@@ -53,7 +53,7 @@ function addMarker(marker) {
 }
 
 filterMarkers = function (categories) {
-    for (i = 0; i < markers.length; i++) {
+    for (i = 0; i < getMarkers().length; i++) {
         marker = markersOnMap[i];
 
         if (
