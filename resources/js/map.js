@@ -1,6 +1,7 @@
 var markersOnMap = [];
 
 let infowindow;
+let markers;
 
 const maps = document.querySelectorAll('[data-lit-map]');
 
@@ -18,7 +19,7 @@ function setupMaps() {
 }
 
 function initMap(element) {
-    let markers = getMarkers();
+    markers = getMarkers();
     map = new google.maps.Map(element, {
         zoom,
         center: center || markers[0].position,
@@ -60,7 +61,8 @@ function addMarker(marker) {
 }
 
 filterMarkers = function (categories) {
-    for (i = 0; i < getMarkers().length; i++) {
+    let filteredMarkers = [];
+    for (i = 0; i < markers.length; i++) {
         marker = markersOnMap[i];
 
         if (
@@ -69,9 +71,16 @@ filterMarkers = function (categories) {
             categories.length === 0
         ) {
             marker.setVisible(true);
+            filteredMarkers.push(marker);
         } else {
             marker.setVisible(false);
         }
+    }
+    if (clusterStyles) {
+        new MarkerClusterer(map, filteredMarkers, {
+            styles: clusterStyles,
+            maxZoom: 12,
+        });
     }
 };
 
