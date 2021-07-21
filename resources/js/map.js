@@ -2,6 +2,7 @@ var markersOnMap = [];
 
 let infowindow;
 let markers;
+let cluster;
 
 const maps = document.querySelectorAll('[data-lit-map]');
 
@@ -10,7 +11,7 @@ window.addEventListener('initMap', () => {
 });
 
 function setupMaps() {
-    maps.forEach((element) => {
+    maps.forEach(element => {
         initMap(element);
         infowindow = new google.maps.InfoWindow({
             content: '',
@@ -35,9 +36,10 @@ function initMap(element) {
     }
 
     if (clusterStyles) {
-        new MarkerClusterer(map, markersOnMap, {
+        cluster = new MarkerClusterer(map, markersOnMap, {
             styles: clusterStyles,
             maxZoom: 12,
+            ignoreHidden: true,
         });
     }
 }
@@ -45,7 +47,7 @@ function initMap(element) {
 function addMarker(marker) {
     var newMarker = new google.maps.Marker({
         position: marker.position,
-        categories: marker.categories?.map((el) => el.toString()) || [],
+        categories: marker.categories?.map(el => el.toString()) || [],
         map: map,
         icon: marker.icon || null,
     });
@@ -60,13 +62,13 @@ function addMarker(marker) {
     }
 }
 
-filterMarkers = function (categories) {
+filterMarkers = function(categories) {
     let filteredMarkers = [];
     for (i = 0; i < markers.length; i++) {
         marker = markersOnMap[i];
 
         if (
-            marker.categories.filter((value) => categories.includes(value))
+            marker.categories.filter(value => categories.includes(value))
                 .length > 0 ||
             categories.length === 0
         ) {
@@ -77,10 +79,7 @@ filterMarkers = function (categories) {
         }
     }
     if (clusterStyles) {
-        new MarkerClusterer(map, filteredMarkers, {
-            styles: clusterStyles,
-            maxZoom: 12,
-        });
+        cluster.repaint();
     }
 };
 
@@ -89,7 +88,7 @@ var checkboxes = document.querySelectorAll('.lit-map-filter');
 for (let index = 0; index < checkboxes.length; index++) {
     checkboxes[index].addEventListener('change', () => {
         var filters = [];
-        checkboxes.forEach((checkbox) => {
+        checkboxes.forEach(checkbox => {
             if (checkbox.checked) {
                 filters.push(checkbox.value.toString());
             }
