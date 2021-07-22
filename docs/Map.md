@@ -22,9 +22,7 @@ Show a map with a simple marker that will be panned to the marker automatically
 
 ```html
 <x-lit-map-marker lat="54.325" lng="10.122">
-    <div class="p-8">
-        Hello World!
-    </div>
+    <div class="p-8">Hello World!</div>
 </x-lit-map-marker>
 ```
 
@@ -58,9 +56,7 @@ Show a map with a simple marker that will be panned to the marker automatically
         </x-lit-map-pin>
     </x-slot>
     <div class="flex bg-white shadow-xl">
-        <div class="p-8">
-            Hello World!
-        </div>
+        <div class="p-8">Hello World!</div>
     </div>
 </x-lit-map-marker>
 ```
@@ -157,6 +153,7 @@ Map
 | --------- | ------ | ------------------------- | -------- |
 | zoom | Number | Zoom Level (0-21) |   |
 | lat, lng | Float | Coordinates to center map |   |
+| mouseover | Boolean | Infowindows for markers appear on hover |   |
 
 Marker
 

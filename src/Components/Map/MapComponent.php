@@ -14,6 +14,7 @@ class MapComponent extends Component
         public ?float $lng = null,
         public ?int $zoom = null,
         public ?string $script = null,
+        public ?bool $mouseover = null,
     ) {
         $this->id = Str::random(32);
     }
