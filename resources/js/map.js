@@ -11,7 +11,7 @@ window.addEventListener('initMap', () => {
 });
 
 function setupMaps() {
-    maps.forEach(element => {
+    maps.forEach((element) => {
         initMap(element);
         infowindow = new google.maps.InfoWindow({
             content: '',
@@ -47,7 +47,7 @@ function initMap(element) {
 function addMarker(marker) {
     var newMarker = new google.maps.Marker({
         position: marker.position,
-        categories: marker.categories?.map(el => el.toString()) || [],
+        categories: marker.categories?.map((el) => el.toString()) || [],
         map: map,
         icon: marker.icon || null,
     });
@@ -60,15 +60,21 @@ function addMarker(marker) {
             infowindow.open(map, newMarker);
         });
     }
+    if (marker.infowindow && mouseover) {
+        google.maps.event.addListener(newMarker, 'mouseover', () => {
+            infowindow.setContent(marker.infowindow);
+            infowindow.open(map, newMarker);
+        });
+    }
 }
 
-filterMarkers = function(categories) {
+filterMarkers = function (categories) {
     let filteredMarkers = [];
     for (i = 0; i < markers.length; i++) {
         marker = markersOnMap[i];
 
         if (
-            marker.categories.filter(value => categories.includes(value))
+            marker.categories.filter((value) => categories.includes(value))
                 .length > 0 ||
             categories.length === 0
         ) {
@@ -88,7 +94,7 @@ var checkboxes = document.querySelectorAll('.lit-map-filter');
 for (let index = 0; index < checkboxes.length; index++) {
     checkboxes[index].addEventListener('change', () => {
         var filters = [];
-        checkboxes.forEach(checkbox => {
+        checkboxes.forEach((checkbox) => {
             if (checkbox.checked) {
                 filters.push(checkbox.value.toString());
             }

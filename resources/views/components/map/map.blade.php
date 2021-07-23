@@ -9,6 +9,8 @@
         return [{{ $slot }}];
     }
 
+    var mouseover = @isset($mouseover) {{ $mouseover }} @else false @endisset;
+
     var styles = @isset($styles) {{ $styles }} @else [] @endisset;
 
     var clusterStyles = @isset($cluster)[{{ $cluster }}]; @else null @endisset
