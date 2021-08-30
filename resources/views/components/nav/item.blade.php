@@ -7,6 +7,7 @@
             href="{{ $item->route ?: $item->url }}"
             {{ $attributes->merge(['class' => 'inline-block '. (hasActiveChild($item) || isActive($item) ? $active : '')]) }}
             data-hide-dropdown-group="level-{{ $level }}"
+            target="{{ $item->target_blank ? '_blank' : '' }}"
         >
             @hasslot($title)
             {{ $title }}
@@ -18,7 +19,7 @@
         <x-lit-dropdown-item
             href="{{ $item->route ?: $item->url }}"
             {{ $attributes->merge(['class' => (hasActiveChild($item) || isActive($item) ? $active : '')]) }}
-            
+            target="{{ $item->target_blank ? '_blank' : '' }}"
         >
             <div data-hide-dropdown-group="level-{{ $level }}" class="flex items-center">
                 @hasslot($title)
@@ -46,6 +47,7 @@
                     <a
                         href="{{ $item->route ?: $item->url }}"
                         {{ $attributes->merge(['class' => 'flex items-center '. (hasActiveChild($item) || isActive($item) ? $active : '')]) }}
+                        target="{{ $item->target_blank ? '_blank' : '' }}"
                     >
                         @hasslot($title)
                         {{ $title }}
