@@ -1,48 +1,48 @@
 {
-    "name": "litstack/bricks",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "jannescb",
-            "email": "jannes@aw-studio.de"
-        }
-    ],
-    "scripts": {
-        "test": "vendor/bin/phpunit"
-    },
-    "autoload": {
-        "psr-4": {
-            "Litstack\\Bricks\\": "src"
-        },
-        "files": [
-            "src/Support/helpers.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
-    "require": {
-        "php": "^8.0",
-        "litstack/litstack": "^3.0",
-        "litstack/bladesmith": "1.x-dev"
-    },
-    "require-dev": {
-        "litstack/rehearsal": "^1.0.1",
-        "phpunit/phpunit": "^9.4",
-        "mockery/mockery": "^1.4"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Litstack\\Bricks\\BricksServiceProvider"
-            ]
-        },
-        "branch-alias": {
-            "dev-master": "1.x-dev"
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+	"name": "litstack/bricks",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "jannescb",
+			"email": "jannes@aw-studio.de"
+		}
+	],
+	"scripts": {
+		"test": "vendor/bin/phpunit"
+	},
+	"autoload": {
+		"psr-4": {
+			"Litstack\\Bricks\\": "src"
+		},
+		"files": [
+			"src/Support/helpers.php"
+		]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\": "tests/"
+		}
+	},
+	"require": {
+		"php": "^8.0",
+		"litstack/litstack": "^3.0",
+		"litstack/bladesmith": "1.0"
+	},
+	"require-dev": {
+		"litstack/rehearsal": "^1.0.1",
+		"phpunit/phpunit": "^9.4",
+		"mockery/mockery": "^1.4"
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Litstack\\Bricks\\BricksServiceProvider"
+			]
+		},
+		"branch-alias": {
+			"dev-master": "1.x-dev"
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }
